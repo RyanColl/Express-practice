@@ -16,16 +16,13 @@ app.get("/", (req, res) => res.render("pages/index"));
 
 app.get("/myForm", (req, res) => res.render("pages/myForm"));
 
-app.post("myForm", (req, res) => {
-  // Add your implementation here 
+app.post("/myForm", (req, res) => {
+  movie = req.body.genres;
+  movies = movie.split(", ")
+  console.log(movies);
+  res.render("pages/index2", {movies: movies})
 });
 
-app.post("/", (req, res) => {
-    movie = req.body.genres
-    movies = movie.split(", ")
-    console.log(movies)
-  res.render("pages/index2", {movies: movies})
-})
 
 app.get("/myListQueryString", (req, res) => {
   // Add your implementation here

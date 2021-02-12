@@ -11,15 +11,16 @@
   <link rel="stylesheet" href="style.css">
   <title>Movieflix</title>
   <script>
-// $(function() {
-//         $("document").ready(function() {
-//             let value = $(".keeper").text()
-//             (".keeper").attr("display", "none")
-//             $(".todo-list").add("label").addClass("todo-list__title")
-//             $(".todo-list").add("i").addClass("check")
-//             $(".todo-list").add("span").value()
-//         })
-//     })
+$(function() {
+        $("document").ready(function() {
+           
+     
+            let a = $("#mainMovies").innerHTML;
+            console.log(a);
+       
+           
+         })
+     }) 
 </script>
 </head>
 
@@ -29,6 +30,7 @@
     <form>
       <fieldset class="todo-list">
         <legend class="todo-list__title">My Movie List</legend>
+        <div id="mainMovies">
         <label class="todo-list__label">
           <input type="checkbox" name="" id="" />
           <i class="check"></i>
@@ -49,6 +51,7 @@
           <i class="check"></i>
           <span>Tenet</span>
         </label>
+        </div>
       </fieldset>
     </form>
   </div>
