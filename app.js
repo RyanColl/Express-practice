@@ -1,8 +1,6 @@
 /*
- Authors:
- Your name and student #:
- Your Partner's Name and student #:
- (Make sure you also specify on the Google Doc)
+ Authors:Artin, Ryan, Steve
+
 */
 const express = require("express");
 const fs = require("fs").promises;
