@@ -10,30 +10,45 @@
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Movieflix</title>
-  <script>
-$(function() {
-        $("document").ready(function() {
-        
-        })
-    })
-</script>
+
 </head>
 
 <body>
   <div class="header"><span class="subheader">Hi John,</span><br> <span class="subheader"> Welcome back 🍿</span></div>
   <div class="container">
+    <nav>
+      <button >
+
+        <a class="items" href="/"><strong>PAGE-STATIC</strong></a>
+        
+        </button>
+        <button>
+        
+          <a  class="items" href="/myform"><strong>MY-FORM</strong></a>
+          
+          </button>
+          <button >
+        
+            <a class="items" href="/myListQueryString?movie1=transformers&movie2=Gladiator"><strong>URL-QUERY</strong></a>
+            
+            </button>
+            <button>
+        
+              <a  class="items" href="/search/Transformers"><strong>Search</strong></a>
+              
+              </button>
+    </nav>
+
+
+
     <form>
       <fieldset class="todo-list">
         <legend class="todo-list__title">My Movie List</legend>
-
-  
-        <h1><%= queryMovie %></h1>
-
-
       
       <div id="mainMovies">
-        <% if(movies == undefined){ %>
-        
+       
+        <%if (typeof movies+"/"+typeof queryMovie == "undefined"+"/"+"undefined") { %>
+  
           <label class="todo-list__label">
             <input type="checkbox" name="" id="" />
             <i class="check"></i>
@@ -54,7 +69,8 @@ $(function() {
             <i class="check"></i>
             <span>Tenet</span>
           </label>
-          <% }else{%>
+    
+        <%}if(typeof movies != "undefined"){  %>
         <% for(let i = 0; i < movies.length;  i++ ) { %>
         
           
@@ -64,6 +80,17 @@ $(function() {
             <span class="movieTitle"><%= movies[i] %></span>
           </label>
   
+        <% }}if(typeof queryMovie != "undefined") {  %>
+        
+        <% for(let i = 0; i < queryMovie.length;  i++ ) { %>
+        
+          
+          <label class="todo-list__label">
+            <input type="checkbox" name="" id="" />
+            <i class="check"></i>
+            <span class="movieTitle"><%= queryMovie[i] %></span>
+          </label>
+  
         <% } %>
         <% } %>
 
@@ -71,6 +98,40 @@ $(function() {
       </fieldset>
     </form>
   </div>
+  <script>
+    
+    
+  $( document ).ready(function() {
+    
+    $("nav").animate({
+left: 100,
+
+    });
+  });
+  let i = $(".items");
+ 
+  for (let index = 0; index < i.length; index++) {
+
+    let temp = i[index].innerText;
+    i[index].innerText = "";
+    let chars = temp.split("");
+    let b = 0;
+
+
+      setInterval(function(){ 
+        
+        if( b<chars.length){
+        i[index].innerText += chars[b];
+        b++;
+        }
+       }, 500);
+  
+    b=0;
+   
+  }
+
+ 
+  </script>
 </body>
 
 </html>

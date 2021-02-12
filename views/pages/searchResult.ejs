@@ -9,7 +9,20 @@
 </head>
 
 <body>
-  <!-- Your Code Goes Here -->
+  <% if(typeof querySearch == "undefined"){ %>
+    <h1>nothing to search for!</h1>
+    <% }else{%>
+
+      <% if(searchResult == true){ %>
+        <h1><%= querySearch %></h1>
+        <p><%= info %></p>
+
+        <% }else{ %>
+<h1>Result not found!</h1>
+
+          <% } %>
+
+      <% } %>
 
 </body>
 
