@@ -13,38 +13,55 @@
   <script>
 $(function() {
         $("document").ready(function() {
-            let value = $(".keeper").text();
-            $(".keeper").attr("display", "none")
-            $(".todo-list").add("label").addClass("todo-list__label")
-            $(".todo-list__label").add("i").addClass("check")
-            $(".todo-list__label").add("span").value()
+        
         })
     })
 </script>
 </head>
-<!-- <div class="keeper"> <%= movie %>  </div> -->
+
 <body>
   <div class="header"><span class="subheader">Hi John,</span><br> <span class="subheader"> Welcome back 🍿</span></div>
   <div class="container">
     <form>
       <fieldset class="todo-list">
         <legend class="todo-list__title">My Movie List</legend>
-      
-      
-    
-      
+        <p><%= queryMovie[0] %></p>
       <div id="mainMovies">
+        <% if(movies == undefined){ %>
+        
+          <label class="todo-list__label">
+            <input type="checkbox" name="" id="" />
+            <i class="check"></i>
+            <span>Inception</span>
+          </label>
+          <label class="todo-list__label">
+            <input type="checkbox" name="" id="" />
+            <i class="check"></i>
+            <span>Spiderman</span>
+          </label>
+          <label class="todo-list__label">
+            <input type="checkbox" name="" id="" />
+            <i class="check"></i>
+            <span>The Dark Knight</span>
+          </label>
+          <label class="todo-list__label">
+            <input type="checkbox" name="" id="" />
+            <i class="check"></i>
+            <span>Tenet</span>
+          </label>
+          <% }else{%>
         <% for(let i = 0; i < movies.length;  i++ ) { %>
-         
+        
+          
           <label class="todo-list__label">
             <input type="checkbox" name="" id="" />
             <i class="check"></i>
             <span class="movieTitle"><%= movies[i] %></span>
           </label>
   
-           
-          
         <% } %>
+        <% } %>
+
       </div>
       </fieldset>
     </form>
