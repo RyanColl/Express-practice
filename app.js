@@ -25,7 +25,15 @@ app.post("/myForm", (req, res) => {
 
 
 app.get("/myListQueryString", (req, res) => {
-  // Add your implementation here
+  let movie1 = req.query.movie1;
+  let movie2 = req.query.movie2;
+      if(movie1 == undefined || movie2 == undefined) {
+      res.send("<p>Please don't leave movie blank!!</p>");
+      } else {
+      res.send(`${movie1} ${movie2}`);
+      res.render("pages/index2", {movie1: movie1, movie2: movie2} )
+
+    }
 });
 
 app.get("/search/:movieName", (req, res) => {
