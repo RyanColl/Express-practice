@@ -28,8 +28,7 @@ app.get("/myListQueryString", (req, res) => {
   let queryMovie = [];
   queryMovie.push(req.query.movie1);
   queryMovie.push(req.query.movie2);
-  res.send({queryMovie: queryMovie});
-  res.render("pages/index2", {queryMovie: queryMovie});
+  res.render("pages/index2",{queryMovie: queryMovie});
 });
 
 
