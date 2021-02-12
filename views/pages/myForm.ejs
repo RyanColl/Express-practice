@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Movieflix</title>
+    <script>
+        $(function() {
+            $("document").ready(function() {
+                $("textarea").click(function() {
+                    $("textarea").attr("placeholder", "")
+                })
+                $("input").submit(() => {
+
+                })
+            })
+        })
+            
+    </script>
+</head>
+
+<body>
+    <p>dsadasdas, sadasdas, dsadasda</p>
+    <!-- Create your text area form here -->
+    <form method='POST' action='/myForm' id="genres">
+        <textarea width="100" height="150" id="genres" name="genres"
+          rows="5" cols="30" form="genres" placeholder="Put movies here, seperated by a comma"></textarea>
+          <input type="submit" value="Send" />
+    </form>
+    
+</body>
+
+</html>
